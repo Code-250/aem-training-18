@@ -1,0 +1,25 @@
+<html>
+<head>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" 
+    data-sly-call="${clientlib.css @ categories=['custom-richard']}"/>
+<title>Title component</title>
+<!--/* <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> */-->
+</head>
+<body>
+<div class="carousel-container">
+<div id="academy-hero-slider" data-sly-resource="${'hero-slider' @resourceType='academy-richard-16/components/hero-slider'}"></div>
+<div>
+<div class="d-flex flex-column p-3 justify-content-center align-items-center" >
+<!--/* <h1 class="mb-0">Page components</h1> */-->
+<h4 data-sly-use.model="it.codeland.academy.core.models.PageModel" dat-sly-test="{properties.title}">title: ${model.value}</h4>
+<h6 data-sly-use.model="it.codeland.academy.core.models.PageModel">description: ${model.description}</h6>
+<!--/* <img src="/content/dam/we-retail/en/products/apparel/shirts/Devi.jpg" alt="an image is here" width="300px" height="300px"/> */-->
+<h2 data-sly-use.model="it.codeland.academy.core.models.PageModel">text: ${model.text}</h2>
+
+<div class="my-custom-class">Hello</div>
+</div>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" 
+    data-sly-call="${clientlib.js @ categories=['custom-richard']}"/>
+    <!--/* <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> */-->
+</body>
+</html>
